@@ -1,2 +1,3 @@
+export * from './usuarios';
 export * from './cidades';
-export * from './faculdades';
+export * from './pessoas';
