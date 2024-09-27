@@ -1,4 +1,4 @@
-import { ICidade, IPessoa, IUsuario } from '../../models';
+import { ICidade, IPessoa, IUsuario, IAluno, IDisciplina } from '../../models';
 
 
 declare module 'knex/types/tables' {
@@ -6,5 +6,7 @@ declare module 'knex/types/tables' {
     pessoa: IPessoa;
     cidade: ICidade;
     usuario: IUsuario;
+    aluno: IAluno;
+    disciplina: IDisciplina;
   }
 }

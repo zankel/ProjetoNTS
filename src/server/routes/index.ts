@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { CidadesController, PessoasController, UsuariosController } from './../controllers';
+import { CidadesController, PessoasController, UsuariosController, AlunosController } from './../controllers';
 import { ensureAuthenticated } from '../shared/middleware';
 
 
@@ -24,6 +24,12 @@ router.post('/pessoas', ensureAuthenticated, PessoasController.createValidation,
 router.get('/pessoas/:id', ensureAuthenticated, PessoasController.getByIdValidation, PessoasController.getById);
 router.put('/pessoas/:id', ensureAuthenticated, PessoasController.updateByIdValidation, PessoasController.updateById);
 router.delete('/pessoas/:id', ensureAuthenticated, PessoasController.deleteByIdValidation, PessoasController.deleteById);
+
+router.get('/alunos', ensureAuthenticated, AlunosController.getAllValidation, AlunosController.getAll);
+router.post('/alunos', ensureAuthenticated, AlunosController.createValidation, AlunosController.create);
+router.get('/alunos/:id', ensureAuthenticated, AlunosController.getByIdValidation, AlunosController.getById);
+router.put('/alunos/:id', ensureAuthenticated, AlunosController.updateByIdValidation, AlunosController.updateById);
+router.delete('/alunos/:id', ensureAuthenticated, AlunosController.deleteByIdValidation, AlunosController.deleteById);
 
 router.post('/entrar', UsuariosController.signInValidation, UsuariosController.signIn);
 router.post('/cadastrar', UsuariosController.signUpValidation, UsuariosController.signUp);
